@@ -32,8 +32,15 @@ public class HelloMoonFragment extends Fragment {
         mVideoView.setVideoURI(Uri.parse("android.resource://" + "com.example.HelloMoon" +"/"+R.raw.apollo_17_stroll));
         mVideoView.setMediaController(new MediaController(getActivity()));
         mVideoView.requestFocus(0);
+
+        mVideoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
 //                mVideoView.setVideoURI(resourceUri);
-        mVideoView.start();
+                mVideoView.start();
+            }
+        });
 
         mPlayButton = (Button) v.findViewById(R.id.hellomoon_playButton);
         mPlayButton.setOnClickListener(new View.OnClickListener() {

@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class HelloMoonFragment extends Fragment {
     private Button mPlayButton;
     private Button mStopButton;
+    private Button mPauseButton;
     private AudioPlayer mPlayer = new AudioPlayer();
 
     @Override
@@ -30,6 +31,14 @@ public class HelloMoonFragment extends Fragment {
             }
         });
 
+        mPauseButton = (Button) v.findViewById(R.id.hellomoon_pauseButton);
+        mPauseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "pause", Toast.LENGTH_LONG);
+                mPlayer.pause();
+            }
+        });
 
         mStopButton = (Button) v.findViewById(R.id.hellomoon_stopButton);
         mStopButton.setOnClickListener(new View.OnClickListener() {
